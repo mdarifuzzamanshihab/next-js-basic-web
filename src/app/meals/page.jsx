@@ -15,7 +15,7 @@ const mealsPage = async () => {
   return (
     <div className={`${roboto.className} p-10 space-y-5`}>
       <h3 className="text-2xl font-bold">Choose your meals</h3>
-      <h3 className="text-2xl font-semibold">Time now: {currentTime}</h3>
+      <h3 className="text-2xl font-semibold">Time : {currentTime}</h3>
       <Meals></Meals>
     </div>
   );
