@@ -14,7 +14,7 @@ const PostsPage = async () => {
   //   console.log(postsData);
   return (
     <div>
-      <h3>All posts : {postsData.length}</h3>
+      <h3>All posts here: {postsData.length}</h3>
       <div className="grid grid-cols-4 gap-5 ">
         {postsData?.slice(0, 15).map((post) => (
           <div className="space-y-2 border-2 p-3 border-red-500" key={post?.id}>
