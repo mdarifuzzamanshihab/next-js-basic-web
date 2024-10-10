@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 const Meals = () => {
   const [searchData, setSearchData] = useState("");
@@ -10,7 +10,7 @@ const Meals = () => {
     setSearchData(e.target.value);
   };
   //   console.log(searchData)
-  const loadData = async () => {
+  const loadData =useCallback( async () => {
     try {
       const res = await fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchData}`
@@ -21,11 +21,11 @@ const Meals = () => {
       console.log(error);
       setError("No data found......");
     }
-  };
+  }, [searchData]);
 
   useEffect(() => {
     loadData();
-  }, []);
+  }, [loadData]);
   return (
     <div>
       <div className="flex mb-10">
